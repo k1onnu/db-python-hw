@@ -24,6 +24,10 @@
 - `e5a9a163a89b_create_orm_users_and_orm_posts.py` — создание таблиц `orm_users` и `orm_posts`
 - `52806ef93ca3_add_bio_to_orm_users.py` — рефакторинг: добавление поля `bio` в `orm_users`
 
-Применяются командой:
-```bash
-alembic upgrade head
+## Задание 4. MongoDB: коллекция с индексами и агрегациями
+Файл `mongo_products.py` содержит:
+- Класс `Products` с методами работы с коллекцией `products` (база `shop_db`).
+- Сложную структуру документов с вложенными словарями (`attributes`, `seller`, `reviews`).
+- 4 индекса: `category+price`, `seller.id`, `tags`, `attributes.color`.
+- Методы: `fill`, `by_category`, `by_seller`, `by_tag`, `by_color`, `update_price`, `delete`.
+- Агрегации: `top_rated`, `avg_by_category`, `top_sellers`.
