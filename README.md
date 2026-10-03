@@ -31,3 +31,8 @@
 - 4 индекса: `category+price`, `seller.id`, `tags`, `attributes.color`.
 - Методы: `fill`, `by_category`, `by_seller`, `by_tag`, `by_color`, `update_price`, `delete`.
 - Агрегации: `top_rated`, `avg_by_category`, `top_sellers`.
+
+## Задание 5. Redis
+- `redis_cache.py` — кеширование с TTL (10 сек), повторный запрос идёт из кеша.
+- `redis_publisher.py` + `redis_subscriber.py` — pub/sub модель через канал `news`.
+- `redis_queue.py` — очередь задач на списке `task_queue` (lpush + brpop).
