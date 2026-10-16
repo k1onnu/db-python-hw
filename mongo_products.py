@@ -1,3 +1,4 @@
+import os
 import pymongo
 from faker import Faker
 import random
@@ -5,7 +6,8 @@ import random
 
 class Products:
     def __init__(self):
-        self.coll = pymongo.MongoClient("mongodb://localhost:27017/")["shop_db"]["products"]
+        uri = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
+        self.coll = pymongo.MongoClient(uri)["shop_db"]["products"]
 
     def indexes(self):
         self.coll.create_index([("category", 1), ("price", -1)])

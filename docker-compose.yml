@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "1369"
+      POSTGRES_DB: Test_base_python
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:7
+    container_name: mongo-db
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis:7
+    container_name: redis-db
+    ports:
+      - "6380:6379"
+
+  app:
+    build: .
+    container_name: hw_app
+    depends_on:
+      - postgres
+      - mongo
+      - redis
+    environment:
+      DB_HOST: postgres
+      DB_PORT: "5432"
+      DB_USER: postgres
+      DB_PASSWORD: "1369"
+      DB_NAME: Test_base_python
+      MONGO_URI: mongodb://mongo:27017/
+      REDIS_HOST: redis
+
+volumes:
+  pg_data:
+  mongo_data:

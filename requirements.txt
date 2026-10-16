@@ -1,0 +1,6 @@
+pymongo
+faker
+sqlalchemy
+psycopg2-binary
+redis<8.0
+alembic

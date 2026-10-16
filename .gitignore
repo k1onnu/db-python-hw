@@ -37,3 +37,6 @@ Thumbs.db
 
 # Alembic (локальные бэкапы, если будут)
 *.bak
+
+# Бэкапы
+backups/
