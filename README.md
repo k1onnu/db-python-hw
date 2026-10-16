@@ -36,3 +36,14 @@
 - `redis_cache.py` — кеширование с TTL (10 сек), повторный запрос идёт из кеша.
 - `redis_publisher.py` + `redis_subscriber.py` — pub/sub модель через канал `news`.
 - `redis_queue.py` — очередь задач на списке `task_queue` (lpush + brpop).
+
+## Задание 6. Автоматизация: бэкапы, Docker, CI/CD
+
+### Скрипты резервного копирования
+- `backup_postgres.sh` — дамп PostgreSQL через `pg_dump` внутри контейнера `postgres-db`, сохранение в `./backups/postgres/`, автоудаление бэкапов старше 7 дней.
+- `backup_mongo.sh` — дамп MongoDB через `mongodump --archive --gzip`, сохранение в `./backups/mongo/`, автоочистка старых архивов.
+
+Запуск (через Git Bash):
+```bash
+bash backup_postgres.sh
+bash backup_mongo.sh
