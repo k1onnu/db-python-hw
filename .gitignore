@@ -38,5 +38,10 @@ Thumbs.db
 # Alembic (локальные бэкапы, если будут)
 *.bak
 
-# Бэкапы
+# Backup
 backups/
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
