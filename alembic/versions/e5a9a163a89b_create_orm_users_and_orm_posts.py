@@ -37,7 +37,7 @@ def upgrade() -> None:
     sa.ForeignKeyConstraint(['user_id'], ['orm_users.id'], ondelete='CASCADE'),
     sa.PrimaryKeyConstraint('id')
     )
-    op.drop_table('users')
+    #op.drop_table('users')
     # ### end Alembic commands ###
 
 

@@ -4,7 +4,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 DB_USER = "postgres"
 DB_PASSWORD = "1369"
 DB_HOST = "localhost"
-DB_PORT = "5432"
+DB_PORT = "5433"
 DB_NAME = "Test_base_python"
 
 DATABASE_URL = f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
