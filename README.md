@@ -43,6 +43,12 @@
 - `backup_postgres.sh` — дамп PostgreSQL через `pg_dump` внутри контейнера `postgres-db`, сохранение в `./backups/postgres/`, автоудаление бэкапов старше 7 дней.
 - `backup_mongo.sh` — дамп MongoDB через `mongodump --archive --gzip`, сохранение в `./backups/mongo/`, автоочистка старых архивов.
 
+## Задание 8. Безопасность: SQL-инъекции, права, аутентификация MongoDB
+
+- `sql_injection_demo.py` — демонстрация уязвимого SQL (конкатенация) и защиты через параметризацию psycopg2.
+- `setup_pg_permissions.sql` — пользователь `limited_user` с правами только CRUD (без DROP TABLE), плюс права на sequences.
+- MongoDB: аутентификация продемонстрирована на отдельном контейнере `mongo-auth` с `MONGO_INITDB_ROOT_USERNAME` / `MONGO_INITDB_ROOT_PASSWORD`.
+
 Запуск (через Git Bash):
 ```bash
 bash backup_postgres.sh
